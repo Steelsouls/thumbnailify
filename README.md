@@ -10,15 +10,17 @@ Only does present working directory. * Not Recursive *
 
 ## Installation
 
-* Download the script:
+1 Download the script:
 	* `git clone git@github.com:Steelsouls/thumbnailify.git`
-* Navigate into the thumbnailify directory:
+2 Navigate into the thumbnailify directory:
 	* `cd thumbnailify`
-* Make a symbolic link in your bin directory so you can call it from anywhere!
+3 Make a symbolic link in your bin directory so you can call it from anywhere!
 	* `ln -s thumbnailify.rb ~/bin/thumbnailify`
+	* If preferred, skip this and move/copy the script into your bin instead.
 
 ## Usage
 
-Once you've made a link in your bin directory, just call `thumbnailify` inside any directory and it'll make a thumbnails directory. Inside will be 256px, 128px, 64px, and 32px versions of your images each in their own directory.
-* Aspect ratios are kept. Pixel dimensions are maximums for each side.
-* Only does your current directory, doesn't search deeper.
+Once you've made a link in your ~/bin, just call `thumbnailify` from anywhere and it'll make a thumbnails directory. Inside will be copies of all images from your current directory in 256px, 128px, 64px, and 32px sizes.
+* Aspect ratios are kept.
+* Pixel dimensions are maximums for each side.
+* Only looks in your current directory, doesn't search deeper.
