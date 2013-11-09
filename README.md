@@ -20,7 +20,9 @@ Only does present working directory. * Not Recursive *
 
 ## Usage
 
-Once you've made a link in your ~/bin, just call `thumbnailify` from anywhere and it'll make a thumbnails directory. Inside will be copies of all images from your current directory in 256px, 128px, 64px, and 32px sizes.
+Once you've made a link in your ~/bin, just call `thumbnailify` from anywhere and it'll make a thumbnails directory. Inside will be copies of all images from your current directory in the default sizes: 256px, 128px, 64px, 32px.
+* Supply a list of numbers to make any size thumbnails you want!
+	* `thumbnailify 600 300` makes only 600px and 300px thumbnails
 * Aspect ratios are kept.
-* Pixel dimensions are maximums for each side.
+* Pixel dimensions are __maximums__ for each side.
 * Only looks in your current directory, doesn't search deeper.
