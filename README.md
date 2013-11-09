@@ -10,11 +10,11 @@ Only does present working directory. * Not Recursive *
 
 ## Installation
 
-1 Download the script:
+1. Download the script:
 	* `git clone git@github.com:Steelsouls/thumbnailify.git`
-2 Navigate into the thumbnailify directory:
+2. Navigate into the thumbnailify directory:
 	* `cd thumbnailify`
-3 Make a symbolic link in your bin directory so you can call it from anywhere!
+3. Make a symbolic link in your bin directory so you can call it from anywhere!
 	* `ln -s thumbnailify.rb ~/bin/thumbnailify`
 	* If preferred, skip this and move/copy the script into your bin instead.
 
