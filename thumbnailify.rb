@@ -12,21 +12,26 @@ require 'find'
 
 present_dir = Dir.pwd
 images = []
-if ARGV.length > 0
-    sizes = ARGV.map { |num| num.to_i }
-else
-  sizes = [256, 128, 64, 32]
-end
-sizes.reject! { |num| num == 0 }
 
+# Parse sizes or set defaults if none given
+if ARGV.empty?
+  sizes = [256, 128, 64, 32]
+else
+  sizes = ARGV.map { |num| num.to_i }
+  sizes.reject! { |num| num == 0 }
+end
+
+# Make directory called thumbnails unless it exists
 thumbnail_top_dir = File.join(present_dir, "thumbnails")
 Dir.mkdir(thumbnail_top_dir) unless Dir.exists?(thumbnail_top_dir)
 
+# Make a subdirectory in thumbnails/ for each size
 thumbnail_dirs = {}
 sizes.each do |num|
   thumbnail_dirs[num] = File.join(present_dir, "thumbnails", "#{num}px")
 end
 
+# Find images
 Find.find(present_dir) do |path|
   next if path == present_dir
   Find.prune if File.directory?(path)
@@ -34,6 +39,7 @@ Find.find(present_dir) do |path|
   images << path if File.basename(path) =~ /png/i
 end
 
+# Create thumbnails
 thumbnail_dirs.each do |size, thumb_dir|
   puts "Creating #{size}px thumbnails..."
   Dir.mkdir(thumb_dir) unless Dir.exists?(thumb_dir)
